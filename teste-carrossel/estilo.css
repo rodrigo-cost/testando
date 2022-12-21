@@ -1,0 +1,26 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+img{
+    height: 200px;
+
+}
+
+#promocoes{
+    position: relative;
+    width: 500px;
+    overflow: hidden;
+}
+.img-promo{
+    margin-left: 50%;
+    transform: translate(-50%,0);
+}
+
+
+.largura-teste{
+    width: 100px;
+    height: 50px;
+    background-color: black;
+}

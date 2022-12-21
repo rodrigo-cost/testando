@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glider Carrosel</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="estilo.css" />
+  </head>
+
+  <body>
+
+    <header>
+      <nav class="nav-bar">
+        <div class="log">
+          <h1>Milena Confecções</h1>
+        </div>
+        <div class="nav-list">
+          <ul>
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"></a>Contatos</li>
+          </ul>
+        </div>
+
+        <div class="buttom"><a href="#">Entrar</a></div>
+      </nav>
+    </header>
+
+    <div class="container" id="promocoes">
+      <div class="swiper-promo">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img class="img-promo" src="slide.jpg" alt="Move" /> 1</div>
+          <div class="swiper-slide">
+            <img class="img-promo" src="slide.jpg" alt="Move" />2
+          </div>
+          <div class="swiper-slide">
+            <img class="img-promo" src="slide.jpg" alt="Move" />3
+          </div>
+          <div class="swiper-slide">
+            <img class="img-promo" src="slide.jpg" alt="Move" />4
+          </div>
+          <div class="swiper-slide">
+            <img class="img-promo" src="slide.jpg" alt="Move" />5
+          </div>
+          <div class="swiper-slide">
+            <img class="img-promo" src="slide.jpg" alt="Move" />6
+          </div>
+          <div class="swiper-slide">
+            <img class="img-promo" src="slide.jpg" alt="Move" />7
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    </div>
+
+    <h1>Produtos</h1>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="slide.jpg" alt="Move" /> 1</div>
+        <div class="swiper-slide"><img src="slide.jpg" alt="Move" />2</div>
+        <div class="swiper-slide"><img src="slide.jpg" alt="Move" />3</div>
+        <div class="swiper-slide"><img src="slide.jpg" alt="Move" />4</div>
+        <div class="swiper-slide"><img src="slide.jpg" alt="Move" />5</div>
+        <div class="swiper-slide"><img src="slide.jpg" alt="Move" />6</div>
+        <div class="swiper-slide"><img src="slide.jpg" alt="Move" />7</div>
+        <div class="swiper-slide"><img src="slide.jpg" alt="Move" />8</div>
+        <div class="swiper-slide"><img src="slide.jpg" alt="Move" />9</div>
+        <div class="swiper-slide"><img src="slide.jpg" alt="Move" />10</div>
+        <div class="swiper-slide"><img src="slide.jpg" alt="Move" />11</div>
+        <div class="swiper-slide"><img src="slide.jpg" alt="Move" />12</div>
+        <div class="swiper-slide"><img src="slide.jpg" alt="Move" />13</div>
+        <div class="swiper-slide"><img src="slide.jpg" alt="Move" />14</div>
+        <div class="swiper-slide"><img src="slide.jpg" alt="Move" />15</div>
+        <div class="swiper-slide"><img src="slide.jpg" alt="Move" />16</div>
+      </div>
+      <div class="swiper-pagination"></div>
+
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <p>Resize the browser window to fire the <code>resize</code> event.</p>
+    <p>Window height: <span id="height"></span></p>
+    <p>Window width: <span id="width"></span></p>
+
+    <div class="largura-teste"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      let larg = window.innerWidth;
+      redefineLarg();
+      // var swiper = new Swiper('.swiper',{
+      //     slidesPerVew: 6,
+      //     spaceBetween: 40,
+      //     slidesPergroup: 3,
+      //     loop: true,
+      //     loopFillgroupWithBlank: true,
+      //     pagination: {
+      //         el: '.swiper-pagination',
+      //         clickable: true,
+      //     },
+      //     navigation: {
+      //         nextE1: '.swiper-button-next',
+      //         prevE1: 'swiper-button-prev'
+      //     }
+      // });
+      // console.log(swiper)
+
+      //        if  (var largura = window.innerWidth
+      //   || document.documentElement.clientWidth
+      //   || document.body.clientWidth;
+      //   var altura = window.innerHeight
+      //   || document.documentElement.clientHeight
+      //   || document.body.clientHeight;
+      //   console.log(altura);
+      //   console.log(largura);)
+      //   addEventListener("resize", (event) => {});
+
+      const heightOutput = document.querySelector("#height");
+      const widthOutput = document.querySelector("#width");
+      const swiper = new Swiper(".swiper-promo", {
+            speed: 400,
+            spaceBetween: 10,
+            autoplay: {
+             delay: 5000,
+            },
+            loop: true,
+            slidesPerView: 1,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+              el: ".swiper-pagination",
+            },
+          });
+
+      function reportWindowSize() {
+        heightOutput.textContent = window.innerHeight;
+        widthOutput.textContent = window.innerWidth;
+      }
+
+
+      let larg_test = document.querySelector('.largura-teste').offsetWidth;
+      console.log(larg_test)
+      function redefineLarg() {
+        larg = window.innerWidth;
+        if (larg > 930) {
+          const swiper = new Swiper(".swiper", {
+            speed: 400,
+            
+            spaceBetween: 10,
+            //loop: true,
+            slidesPerView: 4.5,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+              el: ".swiper-pagination",
+            },
+          });
+        }
+        if (larg < 930) {
+          const swiper = new Swiper(".swiper", {
+            speed: 400,
+            spaceBetween: 10,
+            //loop: true,
+            slidesPerView: 3.5,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+              el: ".swiper-pagination",
+            },
+          });
+        }
+      }
+
+      window.onresize = reportWindowSize;
+      window.onresize = redefineLarg;
+
+
+
+
+      
+    </script>
+  </body>
+</html>
