@@ -82,3 +82,34 @@ function redefinirCat(){
 window.onresize = redefinir;
 // document.querySelector('.bot-cat').style.height = '10px'
 // document.querySelector('.bot-cat').style.width = '10px'
+
+
+
+/////////////////// Scripts da tela do produto//////////////////////
+let modal_status = 'none';
+const switchProduct = () => {
+    const modal = document.querySelector('.modal')    
+    // modal_status = modal.style.display;
+    if (modal_status == 'none'){
+        modal_status = 'block';
+    } else {
+        modal_status = 'none'
+    }
+
+    modal.style.display = modal_status
+}
+window.onclick = function (event){
+    const produto = event.target.offsetParent;
+    const classe = produto.className
+    const tela_produto = document.querySelector('.tela-produto')
+    const fechar = document.querySelector('.fechar')
+    if(event.target == tela_produto || event.target == fechar) {
+        switchProduct();
+    }
+    if ( classe == 'produto') {
+        switchProduct();
+    }
+    
+
+}
+
